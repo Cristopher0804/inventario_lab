@@ -39,8 +39,8 @@ align-items:center;
 box-shadow:0 10px 35px rgba(110,51,255,0.1);
 margin-bottom:30px;
 border-left:5px solid #6E33FF;
-flex-wrap:wrap;
 gap:15px;
+flex-wrap:nowrap; /* ahora en escritorio no hace wrap */
 }
 
 .logo-area{
@@ -73,11 +73,23 @@ padding:12px 25px;
 border-radius:30px;
 cursor:pointer;
 transition:0.3s;
+white-space:nowrap;
 }
 
 .btn-salir:hover{
 transform:scale(1.05);
 box-shadow:0 10px 25px rgba(255,59,59,0.5);
+}
+
+/* ADAPTACIÓN MÓVIL */
+
+@media (max-width:768px){
+.header-bar{
+flex-direction:column;
+align-items:center;
+gap:15px;
+}
+.btn-salir{width:100%;}
 }
 
 /* CONTENEDOR TARJETAS */
