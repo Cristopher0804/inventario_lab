@@ -2,37 +2,42 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Laboratorios - CBTIS 258</title>
 
 <style>
-* { box-sizing: border-box; font-family:'Poppins',sans-serif; margin:0; padding:0; }
+* { box-sizing: border-box; font-family: 'Poppins', sans-serif; margin:0; padding:0; }
 
 body {
 min-height: 100vh;
 background: linear-gradient(135deg,#f0eaff,#e6e0ff,#f0f0ff);
-display:flex;
-flex-direction:column;
-align-items:center;
-padding:20px;
+background-size: 400% 400%;
+animation: gradient 15s ease infinite;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 40px 20px;
+}
+
+@keyframes gradient{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
 /* TOP BAR */
 
 .top-bar{
-width:100%;
-max-width:1200px;
+width: 100%;
+max-width: 1200px;
 background:white;
-padding:20px;
+padding:20px 40px;
 border-radius:25px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 box-shadow:0 10px 35px rgba(110,51,255,0.1);
-margin-bottom:30px;
-border-left:5px solid #6E33FF;
-flex-wrap:wrap;
-gap:15px;
+border-left: 5px solid #6E33FF;
+margin-bottom: 40px;
 }
 
 /* LOGO */
@@ -55,83 +60,79 @@ box-shadow:0 5px 12px rgba(0,0,0,0.2);
 .logo-text{
 font-weight:800;
 color:#6E33FF;
-font-size:24px;
+font-size:26px;
 }
 
 /* MENU */
 
-.menu{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-justify-content:center;
-}
+.menu{ display:flex; gap:15px; flex-wrap: wrap; }
 
 .menu button{
 background:#f4efff;
 border:none;
-padding:10px 18px;
+padding:12px 25px;
 border-radius:30px;
 font-weight:700;
 cursor:pointer;
 transition:0.3s;
-font-size:14px;
 }
 
 .menu button:hover{
 background:#6E33FF;
 color:white;
-transform:scale(1.05);
+transform: scale(1.05);
 }
 
 .menu .active{
-background:linear-gradient(90deg,#6E33FF,#A17BFF);
+background: linear-gradient(90deg,#6E33FF,#A17BFF);
 color:white;
+transform: scale(1.05);
 }
 
 .menu .btn-salir{
-background:linear-gradient(90deg,#FF3B3B,#FF6B6B);
+background: linear-gradient(90deg,#FF3B3B,#FF6B6B);
 color:white;
 font-weight:800;
+}
+
+.menu .btn-salir:hover{
+transform: scale(1.05);
+box-shadow:0 10px 25px rgba(255,59,59,0.5);
 }
 
 /* CONTAINER */
 
 .container{
-width:100%;
-max-width:950px;
+width: 100%;
+max-width: 950px;
 }
 
 /* LABORATORIOS */
 
 .lab-card{
-background: rgba(255,255,255,0.9);
-backdrop-filter: blur(10px);
-border-radius:25px;
-padding:25px;
-margin-bottom:20px;
-box-shadow:0 25px 60px rgba(110,51,255,0.1);
+background: rgba(255,255,255,0.85);
+backdrop-filter: blur(12px);
+border-radius:30px;
+padding:30px;
+margin-bottom:25px;
+box-shadow:0 30px 70px rgba(110,51,255,0.1);
 cursor:pointer;
 transition: transform 0.3s;
 }
 
 .lab-card:hover{ transform: translateY(-5px); }
 
-.lab-title{
-font-weight:700;
-font-size:20px;
-color:#6E33FF;
-}
+.lab-title{ font-weight:700; font-size:20px; color:#6E33FF; }
 
 /* EQUIPOS */
 
 .equipo-card{
-background: rgba(255,255,255,0.9);
-backdrop-filter: blur(10px);
-border-radius:20px;
+background: rgba(255,255,255,0.85);
+backdrop-filter: blur(12px);
+border-radius:25px;
 padding:20px;
 margin:15px 0;
-box-shadow:0 25px 60px rgba(110,51,255,0.1);
+box-shadow:0 20px 50px rgba(110,51,255,0.1);
 position: relative;
 }
 
@@ -177,8 +178,8 @@ box-shadow:0 25px 60px rgba(110,51,255,0.4);
 /* VACIO */
 
 .empty{
-background: rgba(255,255,255,0.9);
-backdrop-filter: blur(10px);
+background: rgba(255,255,255,0.85);
+backdrop-filter: blur(12px);
 padding:60px;
 border-radius:25px;
 text-align:center;
@@ -187,17 +188,6 @@ box-shadow:0 25px 60px rgba(110,51,255,0.1);
 
 .empty-icon{ font-size:60px; margin-bottom:10px; }
 
-/* RESPONSIVE */
-
-@media (max-width:800px){
-.lab-card{ padding:20px; }
-.logo-text{ font-size:20px; }
-}
-
-@media (max-width:500px){
-.top-bar{ flex-direction:column; align-items:center; text-align:center; }
-.menu button{ padding:8px 14px; font-size:13px; }
-}
 </style>
 </head>
 
@@ -206,8 +196,9 @@ box-shadow:0 25px 60px rgba(110,51,255,0.1);
 <!-- TOP BAR -->
 
 <div class="top-bar">
+
 <div class="logo-area">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK8AAACUCAMAAADS8Ykp..." class="logo-img">
+<img src="logo_cbtis.jpg" class="logo-img">
 <div class="logo-text">CBTIS 258</div>
 </div>
 
@@ -216,9 +207,9 @@ box-shadow:0 25px 60px rgba(110,51,255,0.1);
 <button onclick="window.location.href='solicitud.html'">Solicitudes</button>
 <button class="active" onclick="window.location.href='laboratorios.html'">Laboratorios</button>
 <button onclick="window.location.href='inventario.html'">Equipos</button>
-<button onclick="window.location.href='reportes.html'">Reportes</button>
 <button class="btn-salir" onclick="window.location.href='index.html'">Salir</button>
 </div>
+
 </div>
 
 <!-- CONTAINER -->
@@ -226,62 +217,103 @@ box-shadow:0 25px 60px rgba(110,51,255,0.1);
 <div class="container" id="contenedor"></div>
 
 <script>
+
 let contenedor = document.getElementById("contenedor");
 let equipos = JSON.parse(localStorage.getItem("equipos")) || {"1":[],"2":[],"3":[]};
 
 function mostrarLaboratorios() {
-    contenedor.innerHTML = "";
-    for(let i=1;i<=3;i++){
-        let labCard = document.createElement("div");
-        labCard.className = "lab-card";
-        labCard.innerHTML = `<div class="lab-title">Laboratorio ${i}</div>`;
-        labCard.onclick = () => mostrarEquipos(i);
-        contenedor.appendChild(labCard);
-    }
+
+contenedor.innerHTML = "";
+
+for(let i=1;i<=3;i++){
+
+let labCard = document.createElement("div");
+
+labCard.className = "lab-card";
+
+labCard.innerHTML = `<div class="lab-title">Laboratorio ${i}</div>`;
+
+labCard.onclick = () => mostrarEquipos(i);
+
+contenedor.appendChild(labCard);
+
+}
+
 }
 
 function mostrarEquipos(lab){
-    contenedor.innerHTML = "";
-    let labEquipos = equipos[lab];
-    if(labEquipos.length===0){
-        contenedor.innerHTML = `<div class="empty">
-        <div class="empty-icon">📭</div>
-        <h3>No hay equipos registrados en Laboratorio ${lab}</h3>
-        </div>`;
-    }else{
-        labEquipos.forEach((eq,index)=>{
-            let eqCard = document.createElement("div");
-            eqCard.className = "equipo-card";
-            eqCard.innerHTML = `
-            <div><b>Categoría:</b> ${eq.categoria}</div>
-            <div><b>Marca:</b> ${eq.marca}</div>
-            <div><b>Modelo:</b> ${eq.modelo}</div>
-            <div><b>Número de Serie:</b> ${eq.serie}</div>
-            <div><b>Fecha de Recepción:</b> ${eq.fecha}</div>
-            `;
-            let btnEliminar = document.createElement("button");
-            btnEliminar.className = "btn-eliminar";
-            btnEliminar.textContent = "Eliminar";
-            btnEliminar.onclick = (e)=>{
-                e.stopPropagation();
-                if(confirm("¿Deseas eliminar este equipo?")){
-                    equipos[lab].splice(index,1);
-                    localStorage.setItem("equipos",JSON.stringify(equipos));
-                    mostrarEquipos(lab);
-                }
-            };
-            eqCard.appendChild(btnEliminar);
-            contenedor.appendChild(eqCard);
-        });
-    }
-    let volverBtn = document.createElement("button");
-    volverBtn.className = "btn-volver";
-    volverBtn.textContent = "← Volver a Laboratorios";
-    volverBtn.onclick = mostrarLaboratorios;
-    contenedor.appendChild(volverBtn);
+
+contenedor.innerHTML = "";
+
+let labEquipos = equipos[lab];
+
+if(labEquipos.length===0){
+
+contenedor.innerHTML = `<div class="empty">
+<div class="empty-icon">📭</div>
+<h3>No hay equipos registrados en Laboratorio ${lab}</h3>
+</div>`;
+
+}else{
+
+labEquipos.forEach((eq,index)=>{
+
+let eqCard = document.createElement("div");
+
+eqCard.className = "equipo-card";
+
+eqCard.innerHTML = `
+<div><b>Categoría:</b> ${eq.categoria}</div>
+<div><b>Marca:</b> ${eq.marca}</div>
+<div><b>Modelo:</b> ${eq.modelo}</div>
+<div><b>Número de Serie:</b> ${eq.serie}</div>
+<div><b>Fecha de Recepción:</b> ${eq.fecha}</div>
+`;
+
+let btnEliminar = document.createElement("button");
+
+btnEliminar.className = "btn-eliminar";
+
+btnEliminar.textContent = "Eliminar";
+
+btnEliminar.onclick = (e)=>{
+
+e.stopPropagation();
+
+if(confirm("¿Deseas eliminar este equipo?")){
+
+equipos[lab].splice(index,1);
+
+localStorage.setItem("equipos",JSON.stringify(equipos));
+
+mostrarEquipos(lab);
+
+}
+
+};
+
+eqCard.appendChild(btnEliminar);
+
+contenedor.appendChild(eqCard);
+
+});
+
+}
+
+let volverBtn = document.createElement("button");
+
+volverBtn.className = "btn-volver";
+
+volverBtn.textContent = "← Volver a Laboratorios";
+
+volverBtn.onclick = mostrarLaboratorios;
+
+contenedor.appendChild(volverBtn);
+
 }
 
 mostrarLaboratorios();
+
 </script>
 
 </body>
