@@ -3,220 +3,192 @@
 <head>
 <meta charset="UTF-8">
 <title>Registro de Equipo - CBTIS 258</title>
-
 <style>
-*{
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-  margin:0;
-  padding:0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
-body{
-  min-height:100vh;
-  background:linear-gradient(135deg,#f0eaff,#e6e0ff,#f0f0ff);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  padding:10px;
-  overflow-x:hidden; /* Evita scroll horizontal */
+body {
+  background: linear-gradient(135deg,#f0eaff,#e6e0ff,#f0f0ff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden; /* evita scroll horizontal */
+  padding: 10px;
 }
 
-/* TOP BAR */
-.top-bar{
-  width:100%;
-  max-width:1200px;
-  background:white;
-  padding:20px;
-  border-radius:25px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  box-shadow:0 10px 35px rgba(110,51,255,0.1);
-  margin-bottom:20px;
-  border-left:5px solid #6E33FF;
-  flex-wrap:wrap;
+/* BARRA SUPERIOR */
+.top-bar {
+  width: 100%;
+  background: white;
+  padding: 15px;
+  border-radius: 25px;
+  display: flex;
+  flex-wrap: wrap; /* permite que elementos bajen en móvil */
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 35px rgba(110,51,255,0.1);
+  border-left: 5px solid #6E33FF;
+  margin-bottom: 20px;
 }
 
-/* AREA LOGO */
-.logo-area{
-  display:flex;
-  align-items:center;
-  gap:12px;
+/* LOGO */
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.logo-img{
-  width:50px;
-  height:50px;
-  border-radius:50%;
-  object-fit:cover;
-  border:3px solid #6E33FF;
-  box-shadow:0 5px 12px rgba(0,0,0,0.2);
+.logo-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #6E33FF;
 }
 
-.logo-text{
-  font-weight:800;
-  color:#6E33FF;
-  font-size:22px;
+.logo-text {
+  font-weight: 800;
+  color: #6E33FF;
+  font-size: 22px;
 }
 
-/* MENU */
-.menu{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  justify-content:flex-end;
+/* MENÚ */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.menu button{
-  padding:12px 25px;
-  border:none;
-  border-radius:30px;
-  font-weight:700;
-  cursor:pointer;
-  transition:0.3s;
-  background:#f4efff;
-  min-width:120px;
-  text-align:center;
+.menu button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #f4efff;
+  min-width: 100px;
+  text-align: center;
+  transition: 0.3s;
 }
 
-.menu button:hover{
-  background:#6E33FF;
-  color:white;
-  transform:scale(1.05);
+.menu button:hover {
+  background: #6E33FF;
+  color: white;
+  transform: scale(1.05);
 }
 
-.menu .active{
-  background:linear-gradient(90deg,#6E33FF,#A17BFF);
-  color:white;
-  transform:scale(1.05);
+.menu .active {
+  background: linear-gradient(90deg,#6E33FF,#A17BFF);
+  color: white;
 }
 
-.menu .btn-salir{
-  background:linear-gradient(90deg,#FF3B3B,#FF6B6B);
-  color:white;
-  font-weight:800;
-}
-
-.menu .btn-salir:hover{
-  transform:scale(1.05);
-  box-shadow:0 10px 25px rgba(255,59,59,0.5);
+.menu .btn-salir {
+  background: linear-gradient(90deg,#FF3B3B,#FF6B6B);
+  color: white;
+  font-weight: 800;
 }
 
 /* FORMULARIO */
-.card-form{
-  background:rgba(255,255,255,0.85);
-  backdrop-filter:blur(12px);
-  border-radius:25px;
-  padding:25px;
-  width:100%;
-  max-width:950px;
-  box-shadow:0 30px 70px rgba(110,51,255,0.1);
-  transition:transform 0.3s;
+.card-form {
+  width: 100%;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  padding: 20px;
+  box-shadow: 0 30px 70px rgba(110,51,255,0.1);
 }
 
-.header-form h3{
-  font-size:24px;
-  color:#6E33FF;
-  margin-bottom:20px;
-  border-bottom:2px solid #A17BFF;
-  padding-bottom:8px;
-  letter-spacing:1px;
+.header-form h3 {
+  font-size: 24px;
+  color: #6E33FF;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #A17BFF;
+  padding-bottom: 6px;
 }
 
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
 }
 
-label{
-  font-size:12px;
-  font-weight:700;
-  color:#555;
-  text-transform:uppercase;
-  margin-bottom:6px;
-  display:block;
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: #555;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
-input,select{
-  width:100%;
-  padding:12px;
-  border-radius:12px;
-  border:2px solid #eee;
-  background:#fcfcfc;
-  font-size:14px;
-  transition:0.3s;
+input, select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 2px solid #eee;
+  background: #fcfcfc;
+  font-size: 14px;
+  transition: 0.3s;
 }
 
-input:focus,select:focus{
-  border-color:#6E33FF;
-  outline:none;
-  background:white;
-  box-shadow:0 0 15px rgba(110,51,255,0.1);
+input:focus, select:focus {
+  border-color: #6E33FF;
+  outline: none;
+  background: white;
+  box-shadow: 0 0 15px rgba(110,51,255,0.1);
 }
 
-.btn-submit{
-  grid-column:span 2;
-  background:linear-gradient(90deg,#6E33FF,#A17BFF);
-  color:white;
-  border:none;
-  padding:16px;
-  border-radius:25px;
-  font-weight:800;
-  font-size:16px;
-  cursor:pointer;
+.btn-submit {
+  grid-column: span 2;
+  padding: 16px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(90deg,#6E33FF,#A17BFF);
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
 }
 
-.btn-submit:hover{
-  transform:scale(1.03);
-  box-shadow:0 25px 50px rgba(110,51,255,0.4);
+.btn-submit:hover {
+  transform: scale(1.03);
+  box-shadow: 0 25px 50px rgba(110,51,255,0.4);
 }
 
-/* RESPONSIVE CELULAR */
-@media(max-width:600px){
-  body{
-    padding:10px 5px;
+/* RESPONSIVE MÓVIL */
+@media(max-width:600px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
   }
 
-  .top-bar{
-    flex-direction:column;
-    align-items:center;
-    padding:15px;
-    gap:15px;
+  .menu {
+    flex-direction: column;
+    width: 100%;
   }
 
-  .logo-text{
-    font-size:20px;
+  .menu button {
+    width: 100%;
+    min-width: 0;
   }
 
-  .menu{
-    flex-direction:column;
-    width:100%;
-    gap:10px;
+  .form-grid {
+    grid-template-columns: 1fr;
   }
 
-  .menu button{
-    width:100%;
-    min-width:0;
-    padding:15px;
-    font-size:16px;
-  }
-
-  .form-grid{
-    grid-template-columns:1fr;
-  }
-
-  .btn-submit{
-    grid-column:span 1;
+  .btn-submit {
+    grid-column: span 1;
   }
 }
 </style>
 </head>
-
 <body>
 
-<!-- BARRA SUPERIOR -->
 <div class="top-bar">
   <div class="logo-area">
     <img src="logo_cbtis.jpg" class="logo-img">
@@ -224,15 +196,14 @@ input:focus,select:focus{
   </div>
 
   <div class="menu">
-    <button class="active" onclick="window.location.href='registro.html'">Registro</button>
-    <button onclick="window.location.href='solicitud.html'">Solicitudes</button>
-    <button onclick="window.location.href='laboratorios.html'">Laboratorios</button>
-    <button onclick="window.location.href='inventario.html'">Equipos</button>
-    <button class="btn-salir" onclick="window.location.href='menu.html'">Salir</button>
+    <button class="active">Registro</button>
+    <button>Solicitudes</button>
+    <button>Laboratorios</button>
+    <button>Equipos</button>
+    <button class="btn-salir">Salir</button>
   </div>
 </div>
 
-<!-- FORMULARIO -->
 <div class="card-form">
   <div class="header-form">
     <h3>Registro de equipos</h3>
@@ -241,7 +212,7 @@ input:focus,select:focus{
   <div class="form-grid">
     <div>
       <label>Categoría del Equipo</label>
-      <select id="categoria">
+      <select>
         <option>Computadora de Escritorio</option>
         <option>Servidor</option>
         <option>Laptop</option>
@@ -250,65 +221,36 @@ input:focus,select:focus{
 
     <div>
       <label>Marca Fabricante</label>
-      <input type="text" id="marca" placeholder="Ej. Dell / HP">
+      <input type="text" placeholder="Ej. Dell / HP">
     </div>
 
     <div>
       <label>Modelo Específico</label>
-      <input type="text" id="modelo" placeholder="Ej. Latitude 5420">
+      <input type="text" placeholder="Ej. Latitude 5420">
     </div>
 
     <div>
       <label>Número de Serie</label>
-      <input type="text" id="serie" placeholder="S/N único del equipo">
+      <input type="text" placeholder="S/N único del equipo">
     </div>
 
     <div>
       <label>Asignar a Laboratorio</label>
-      <select id="laboratorio">
-        <option value="1">Laboratorio 1</option>
-        <option value="2">Laboratorio 2</option>
-        <option value="3">Laboratorio 3</option>
+      <select>
+        <option>Laboratorio 1</option>
+        <option>Laboratorio 2</option>
+        <option>Laboratorio 3</option>
       </select>
     </div>
 
     <div>
       <label>Fecha de Recepción</label>
-      <input type="date" id="fecha">
+      <input type="date">
     </div>
 
-    <button class="btn-submit" onclick="guardarEquipo()">GUARDAR REGISTRO</button>
+    <button class="btn-submit">GUARDAR REGISTRO</button>
   </div>
 </div>
-
-<script>
-let equipos = JSON.parse(localStorage.getItem("equipos")) || {"1":[],"2":[],"3":[]};
-
-function guardarEquipo(){
-  const categoria=document.getElementById("categoria").value;
-  const marca=document.getElementById("marca").value;
-  const modelo=document.getElementById("modelo").value;
-  const serie=document.getElementById("serie").value;
-  const laboratorio=document.getElementById("laboratorio").value;
-  const fecha=document.getElementById("fecha").value;
-
-  if(!categoria||!marca||!modelo||!serie||!fecha){
-    alert("Llena todos los campos");
-    return;
-  }
-
-  const equipo={categoria,marca,modelo,serie,fecha};
-  equipos[laboratorio].push(equipo);
-  localStorage.setItem("equipos",JSON.stringify(equipos));
-
-  document.getElementById("marca").value="";
-  document.getElementById("modelo").value="";
-  document.getElementById("serie").value="";
-  document.getElementById("fecha").value="";
-
-  alert("Equipo añadido al Laboratorio "+laboratorio);
-}
-</script>
 
 </body>
 </html>
