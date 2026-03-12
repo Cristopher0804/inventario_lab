@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reportar Falla - CBTIS 258</title>
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-papEjkZw6Bl+PZ1WQZikv+GQ1ZnQZ9dX6k55Nf0b1/PyrR8UkBl/ZFkM1n9J5lw5H0h4s5kTfka1TlY0K3nQWg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Font Awesome CDN confiable -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-lvVrGQ+05NfU+Xq7cROkpq3h+UccsOKTxyuqJJX91FQ0UqH2A8/JQ1r/R2yFZsUZfO55m/mF4MK6R+q2C1HfIQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <style>
 :root{
@@ -133,6 +133,8 @@ label{
   font-size:18px;
   margin-right:8px;
   color:var(--primary);
+  min-width:20px;
+  text-align:center;
 }
 
 .input-icon input,
@@ -238,7 +240,7 @@ label{
   <p class="subtitle">Sistema de Control de Laboratorios CBTIS 258</p>
 
   <button class="btn btn-report" onclick="window.location.href='menu.html'">
-    Volver al Menú
+    <i class="fa-solid fa-arrow-left"></i> Volver al Menú
   </button>
 
   <div class="input-group">
@@ -266,7 +268,7 @@ label{
   </div>
 
   <button class="btn btn-submit" onclick="alert('Falla reportada correctamente!')">
-    ENVIAR REPORTE
+    <i class="fa-solid fa-paper-plane"></i> ENVIAR REPORTE
   </button>
 
   <p class="footer">Sistema de Control de Laboratorios • CBTIS 258</p>
