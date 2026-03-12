@@ -8,17 +8,18 @@
 body{ 
   font-family:'Poppins',sans-serif;
   margin:0;
-  height:100vh;
+  min-height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
   background:linear-gradient(135deg,#FDF9F0 0%,#FFF5F0 100%);
-  overflow:hidden;
+  overflow-x:hidden;
 }
 
 /* Logo */
 .logo{
   width:200px;
+  max-width:50%;
   height:auto;
   display:block;
   margin:0 auto 20px auto;
@@ -166,17 +167,34 @@ body{
 /* Diseño responsivo */
 @media screen and (max-width: 480px){
   .card-report{
+    width:90%;
     padding:30px 20px;
   }
+  .logo{
+    width:120px;
+    margin-bottom:15px;
+  }
   .header-report h2{
-    font-size:22px;
+    font-size:20px;
   }
   .header-report p{
     font-size:12px;
   }
+  .input-group input,
+  .input-group textarea{
+    padding:12px;
+    font-size:13px;
+  }
+  .input-group label{
+    font-size:10px;
+  }
   .btn-enviar, .btn-volver{
-    padding:14px;
+    padding:12px;
     font-size:14px;
+  }
+  .btn-container{
+    flex-direction:column;
+    gap:10px;
   }
 }
 </style>
