@@ -6,407 +6,371 @@
 <title>Solicitudes - CBTIS 258</title>
 
 <style>
-
 *{
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-margin:0;
-padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+  margin:0;
+  padding:0;
 }
 
 body{
-min-height:100vh;
-background:linear-gradient(135deg,#f0eaff,#e6e0ff,#f0f0ff);
-display:flex;
-flex-direction:column;
-align-items:center;
-padding:20px;
+  min-height:100vh;
+  background:linear-gradient(135deg,#f0eaff,#e6e0ff,#f0f0ff);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:20px;
 }
 
 /* TOP BAR */
-
 .top-bar{
-width:100%;
-max-width:1200px;
-background:white;
-padding:20px;
-border-radius:25px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 10px 35px rgba(110,51,255,0.1);
-margin-bottom:30px;
-border-left:5px solid #6E33FF;
-flex-wrap:wrap;
-gap:15px;
+  width:100%;
+  max-width:1200px;
+  background:white;
+  padding:20px;
+  border-radius:25px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 10px 35px rgba(110,51,255,0.1);
+  margin-bottom:30px;
+  border-left:5px solid #6E33FF;
+  flex-wrap:wrap;
+  gap:15px;
 }
 
-/* LOGO */
-
 .logo-area{
-display:flex;
-align-items:center;
-gap:12px;
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
 
 .logo-img{
-width:50px;
-height:50px;
-border-radius:50%;
-object-fit:cover;
-border:3px solid #6E33FF;
-box-shadow:0 5px 12px rgba(0,0,0,0.2);
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #6E33FF;
+  box-shadow:0 5px 12px rgba(0,0,0,0.2);
 }
 
 .logo-text{
-font-weight:800;
-color:#6E33FF;
-font-size:24px;
+  font-weight:800;
+  color:#6E33FF;
+  font-size:24px;
 }
 
-/* MENU */
-
 .menu{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-justify-content:center;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:center;
 }
 
 .menu button{
-background:#f4efff;
-border:none;
-padding:10px 18px;
-border-radius:30px;
-font-weight:700;
-cursor:pointer;
-transition:0.3s;
-font-size:14px;
+  background:#f4efff;
+  border:none;
+  padding:10px 18px;
+  border-radius:30px;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.3s;
+  font-size:14px;
 }
 
 .menu button:hover{
-background:#6E33FF;
-color:white;
-transform:scale(1.05);
+  background:#6E33FF;
+  color:white;
+  transform:scale(1.05);
 }
 
 .menu .active{
-background:linear-gradient(90deg,#6E33FF,#A17BFF);
-color:white;
+  background:linear-gradient(90deg,#6E33FF,#A17BFF);
+  color:white;
 }
 
 .menu .btn-salir{
-background:linear-gradient(90deg,#FF3B3B,#FF6B6B);
-color:white;
-font-weight:800;
+  background:linear-gradient(90deg,#FF3B3B,#FF6B6B);
+  color:white;
+  font-weight:800;
+}
+
+/* BOTONES NUEVA/LISTA */
+.switch-buttons{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-bottom:20px;
+}
+
+.switch-buttons button{
+  background:#f4efff;
+  border:none;
+  padding:12px 22px;
+  border-radius:30px;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.3s;
+  font-size:14px;
+}
+
+.switch-buttons button:hover{
+  background:#6E33FF;
+  color:white;
+  transform:scale(1.05);
+}
+
+.switch-buttons .active{
+  background:linear-gradient(90deg,#6E33FF,#A17BFF);
+  color:white;
 }
 
 /* FORMULARIO */
-
 .card-form{
-background:rgba(255,255,255,0.9);
-backdrop-filter:blur(10px);
-border-radius:25px;
-padding:35px;
-width:100%;
-max-width:900px;
-box-shadow:0 25px 60px rgba(110,51,255,0.1);
-margin-bottom:20px;
+  background:rgba(255,255,255,0.9);
+  backdrop-filter:blur(10px);
+  border-radius:25px;
+  padding:35px;
+  width:100%;
+  max-width:900px;
+  box-shadow:0 25px 60px rgba(110,51,255,0.1);
+  margin-bottom:20px;
 }
 
 .header-form h3{
-font-size:24px;
-color:#6E33FF;
-margin-bottom:25px;
-border-bottom:2px solid #A17BFF;
-padding-bottom:8px;
+  font-size:24px;
+  color:#6E33FF;
+  margin-bottom:25px;
+  border-bottom:2px solid #A17BFF;
+  padding-bottom:8px;
 }
 
-/* GRID FORM */
-
 .form-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
 }
 
 label{
-font-size:12px;
-font-weight:700;
-color:#555;
-text-transform:uppercase;
-margin-bottom:6px;
-display:block;
+  font-size:12px;
+  font-weight:700;
+  color:#555;
+  text-transform:uppercase;
+  margin-bottom:6px;
+  display:block;
 }
 
 input, select, textarea{
-width:100%;
-padding:14px;
-border-radius:12px;
-border:2px solid #eee;
-background:#fcfcfc;
-font-size:14px;
+  width:100%;
+  padding:14px;
+  border-radius:12px;
+  border:2px solid #eee;
+  background:#fcfcfc;
+  font-size:14px;
 }
 
 input:focus, select:focus, textarea:focus{
-border-color:#6E33FF;
-outline:none;
-background:white;
+  border-color:#6E33FF;
+  outline:none;
+  background:white;
 }
 
 textarea{
-grid-column:span 2;
-height:100px;
-resize:none;
+  grid-column:span 2;
+  height:100px;
+  resize:none;
 }
 
 .btn-submit{
-grid-column:span 2;
-background:linear-gradient(90deg,#6E33FF,#A17BFF);
-color:white;
-border:none;
-padding:18px;
-border-radius:20px;
-font-weight:800;
-font-size:15px;
-cursor:pointer;
+  grid-column:span 2;
+  background:linear-gradient(90deg,#6E33FF,#A17BFF);
+  color:white;
+  border:none;
+  padding:18px;
+  border-radius:20px;
+  font-weight:800;
+  font-size:15px;
+  cursor:pointer;
 }
 
-/* TABLA */
-
-.table-wrapper{
-overflow-x:auto;
+/* TARJETAS DE SOLICITUD */
+.card-solicitud{
+  background:white;
+  border-radius:20px;
+  padding:20px;
+  margin-bottom:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+  display:flex;
+  flex-direction:column;
+  gap:8px;
 }
 
-table{
-width:100%;
-border-collapse:collapse;
-min-width:700px;
+.card-solicitud .estado{
+  align-self:flex-start;
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:700;
+  color:white;
+  background:#ffc107; /* espera por defecto */
 }
-
-th{
-background:#f4efff;
-color:#6E33FF;
-padding:12px;
-}
-
-td{
-padding:10px;
-border-bottom:1px solid #eee;
-text-align:center;
-}
-
-tr:hover{
-background:#faf8ff;
-}
-
-.estado{
-padding:6px 12px;
-border-radius:20px;
-font-size:12px;
-font-weight:700;
-}
-
-.espera{background:#ffe7a3;}
 
 /* RESPONSIVE */
-
 @media (max-width:800px){
-
-.form-grid{
-grid-template-columns:1fr;
-}
-
-.btn-submit{
-grid-column:span 1;
-}
-
-.logo-text{
-font-size:20px;
-}
-
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+  .btn-submit{
+    grid-column:span 1;
+  }
+  .logo-text{
+    font-size:20px;
+  }
 }
 
 @media (max-width:500px){
-
-.top-bar{
-flex-direction:column;
-align-items:center;
-text-align:center;
+  .top-bar{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+  .menu{
+    justify-content:center;
+  }
+  .menu button{
+    padding:8px 14px;
+    font-size:13px;
+  }
+  .switch-buttons{
+    flex-direction:column;
+    gap:10px;
+  }
 }
-
-.menu{
-justify-content:center;
-}
-
-.menu button{
-padding:8px 14px;
-font-size:13px;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- BARRA SUPERIOR -->
-
+<!-- TOP BAR -->
 <div class="top-bar">
-
-<div class="logo-area">
-<img src="logo_cbtis.jpg" class="logo-img">
-<div class="logo-text">CBTIS 258</div>
+  <div class="logo-area">
+    <img src="logo_cbtis.jpg" class="logo-img">
+    <div class="logo-text">CBTIS 258</div>
+  </div>
+  <div class="menu">
+    <button onclick="window.location.href='registro.html'">Registro</button>
+    <button class="active" onclick="window.location.href='solicitud.html'">Solicitudes</button>
+    <button onclick="window.location.href='laboratorios.html'">Laboratorios</button>
+    <button onclick="window.location.href='inventario.html'">Equipos</button>
+    <button class="btn-salir" onclick="window.location.href='menu.html'">Salir</button>
+  </div>
 </div>
 
-<div class="menu">
-<button onclick="window.location.href='registro.html'">Registro</button>
-<button class="active" onclick="window.location.href='solicitud.html'">Solicitudes</button>
-<button onclick="window.location.href='laboratorios.html'">Laboratorios</button>
-<button onclick="window.location.href='inventario.html'">Equipos</button>
-<button class="btn-salir" onclick="window.location.href='menu.html'">Salir</button>
-</div>
-
-</div>
-
-<!-- SWITCH NUEVA/LISTA -->
-
-<div class="card-form">
-
-<div class="header-form">
-<h3>Solicitudes</h3>
-</div>
-
-<div class="form-grid">
-
-<div>
-<button onclick="mostrarNueva()">Nueva Solicitud</button>
-</div>
-<div>
-<button onclick="mostrarLista()">Lista de Solicitudes</button>
-</div>
-
-</div>
+<!-- BOTONES NUEVA/LISTA -->
+<div class="switch-buttons">
+  <button id="btnNueva" class="active" onclick="mostrarNueva()">Nueva Solicitud</button>
+  <button id="btnLista" onclick="mostrarLista()">Lista de Solicitudes</button>
 </div>
 
 <!-- NUEVA SOLICITUD -->
-
-<div id="nueva" class="card-form" style="display:none;">
-<div class="header-form"><h3>Nueva Solicitud</h3></div>
-<div class="form-grid">
-
-<div>
-<label>Laboratorio</label>
-<select id="laboratorio">
-<option>Lab 1</option>
-<option>Lab 2</option>
-<option>Lab 3</option>
-</select>
-</div>
-
-<div>
-<label>Solicitante</label>
-<input type="text" id="nombre">
-</div>
-
-<div>
-<label>Tipo</label>
-<select id="tipo">
-<option>Material</option>
-<option>Equipo</option>
-<option>Herramienta</option>
-</select>
-</div>
-
-<div>
-<label>Cantidad</label>
-<input type="number" id="cantidad">
-</div>
-
-<div>
-<label>Descripción</label>
-<textarea id="descripcion" placeholder="Descripción"></textarea>
-</div>
-
-<button class="btn-submit" onclick="guardarSolicitud()">Guardar Solicitud</button>
-
-</div>
+<div id="nueva" class="card-form">
+  <div class="header-form"><h3>Nueva Solicitud</h3></div>
+  <div class="form-grid">
+    <div>
+      <label>Laboratorio</label>
+      <select id="laboratorio">
+        <option>Lab 1</option>
+        <option>Lab 2</option>
+        <option>Lab 3</option>
+      </select>
+    </div>
+    <div>
+      <label>Solicitante</label>
+      <input type="text" id="nombre">
+    </div>
+    <div>
+      <label>Tipo</label>
+      <select id="tipo">
+        <option>Material</option>
+        <option>Equipo</option>
+        <option>Herramienta</option>
+      </select>
+    </div>
+    <div>
+      <label>Cantidad</label>
+      <input type="number" id="cantidad">
+    </div>
+    <div>
+      <label>Descripción</label>
+      <textarea id="descripcion" placeholder="Descripción"></textarea>
+    </div>
+    <button class="btn-submit" onclick="guardarSolicitud()">Guardar Solicitud</button>
+  </div>
 </div>
 
 <!-- LISTA DE SOLICITUDES -->
-
-<div id="lista" class="card-form">
-<div class="header-form"><h3>Lista de Solicitudes</h3></div>
-
-<div class="table-wrapper">
-<table>
-<thead>
-<tr>
-<th>Laboratorio</th>
-<th>Solicitante</th>
-<th>Tipo</th>
-<th>Cantidad</th>
-<th>Descripción</th>
-<th>Estado</th>
-</tr>
-</thead>
-<tbody id="tablaSolicitudes"></tbody>
-</table>
-</div>
+<div id="lista" class="card-form" style="display:none;">
+  <div class="header-form"><h3>Lista de Solicitudes</h3></div>
+  <div id="tarjetasSolicitudes"></div>
 </div>
 
 <script>
-
 function mostrarNueva(){
-document.getElementById("nueva").style.display="block";
-document.getElementById("lista").style.display="none";
+  document.getElementById("nueva").style.display="block";
+  document.getElementById("lista").style.display="none";
+  document.getElementById("btnNueva").classList.add("active");
+  document.getElementById("btnLista").classList.remove("active");
 }
 
 function mostrarLista(){
-document.getElementById("nueva").style.display="none";
-document.getElementById("lista").style.display="block";
-cargarSolicitudes();
+  document.getElementById("nueva").style.display="none";
+  document.getElementById("lista").style.display="block";
+  document.getElementById("btnLista").classList.add("active");
+  document.getElementById("btnNueva").classList.remove("active");
+  cargarSolicitudes();
 }
 
 function guardarSolicitud(){
-const solicitud={
-laboratorio:document.getElementById("laboratorio").value,
-nombre:document.getElementById("nombre").value,
-tipo:document.getElementById("tipo").value,
-cantidad:document.getElementById("cantidad").value,
-descripcion:document.getElementById("descripcion").value,
-estado:"En espera"
-};
-
-let solicitudes=JSON.parse(localStorage.getItem("solicitudes"))||[];
-solicitudes.push(solicitud);
-localStorage.setItem("solicitudes",JSON.stringify(solicitudes));
-
-alert("Solicitud guardada");
-mostrarLista();
+  const solicitud={
+    laboratorio:document.getElementById("laboratorio").value,
+    nombre:document.getElementById("nombre").value,
+    tipo:document.getElementById("tipo").value,
+    cantidad:document.getElementById("cantidad").value,
+    descripcion:document.getElementById("descripcion").value,
+    estado:"En espera"
+  };
+  if(!solicitud.nombre || !solicitud.cantidad || !solicitud.descripcion){
+    alert("Llena todos los campos");
+    return;
+  }
+  let solicitudes=JSON.parse(localStorage.getItem("solicitudes"))||[];
+  solicitudes.push(solicitud);
+  localStorage.setItem("solicitudes",JSON.stringify(solicitudes));
+  alert("Solicitud guardada");
+  mostrarLista();
 }
 
 function cargarSolicitudes(){
-let solicitudes=JSON.parse(localStorage.getItem("solicitudes"))||[];
-let tabla=document.getElementById("tablaSolicitudes");
-tabla.innerHTML="";
-
-solicitudes.forEach(s=>{
-tabla.innerHTML+=`<tr>
-<td>${s.laboratorio}</td>
-<td>${s.nombre}</td>
-<td>${s.tipo}</td>
-<td>${s.cantidad}</td>
-<td>${s.descripcion}</td>
-<td><span class="estado espera">${s.estado}</span></td>
-</tr>`;
-});
+  let solicitudes=JSON.parse(localStorage.getItem("solicitudes"))||[];
+  const contenedor=document.getElementById("tarjetasSolicitudes");
+  contenedor.innerHTML="";
+  solicitudes.forEach(s=>{
+    contenedor.innerHTML+=`
+      <div class="card-solicitud">
+        <strong>Solicitante:</strong> ${s.nombre}<br>
+        <strong>Laboratorio:</strong> ${s.laboratorio}<br>
+        <strong>Tipo:</strong> ${s.tipo}<br>
+        <strong>Cantidad:</strong> ${s.cantidad}<br>
+        <strong>Descripción:</strong> ${s.descripcion}<br>
+        <span class="estado">${s.estado}</span>
+      </div>
+    `;
+  });
 }
 
-// Mostrar lista por defecto
-mostrarLista();
-
+// Mostrar nueva solicitud por defecto
+mostrarNueva();
 </script>
 
 </body>
