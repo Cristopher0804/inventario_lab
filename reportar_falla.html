@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reportar Falla - CBTIS 258</title>
 
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-papEjkZw6Bl+PZ1WQZikv+GQ1ZnQZ9dX6k55Nf0b1/PyrR8UkBl/ZFkM1n9J5lw5H0h4s5kTfka1TlY0K3nQWg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <style>
 :root{
   --primary:#6E33FF;
@@ -44,15 +47,15 @@ body::before{
   opacity:.4;
 }
 
-/* tarjeta reporte */
-.report-card{
+/* tarjeta */
+.card{
   background:rgba(255,255,255,0.9);
   backdrop-filter:blur(10px);
   padding:clamp(25px,4vw,50px);
   border-radius:30px;
   border:1px solid rgba(110,51,255,0.2);
   box-shadow:0 20px 50px rgba(0,0,0,0.1);
-  max-width:420px;
+  max-width:500px;
   width:100%;
   text-align:center;
   transition:transform .3s ease;
@@ -60,13 +63,19 @@ body::before{
   z-index:1;
 }
 
-.report-card:hover{
+.card:hover{
   transform:translateY(-5px);
 }
 
 @keyframes entrada{
-  from{opacity:0; transform:translateY(40px);}
-  to{opacity:1; transform:translateY(0);}
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
 /* logo */
@@ -89,12 +98,13 @@ h1{
   font-weight:800;
 }
 
+/* subtitulo */
 p.subtitle{
   color:#666;
   margin-bottom:30px;
 }
 
-/* inputs */
+/* input group */
 .input-group{
   text-align:left;
   margin-bottom:20px;
@@ -103,7 +113,7 @@ p.subtitle{
 label{
   font-size:12px;
   font-weight:700;
-  color:var(--primary);
+  color:#6E33FF;
   text-transform:uppercase;
   margin-left:5px;
 }
@@ -119,9 +129,10 @@ label{
   transition:.3s;
 }
 
-.input-icon span{
+.input-icon i{
   font-size:18px;
   margin-right:8px;
+  color:var(--primary);
 }
 
 .input-icon input,
@@ -131,7 +142,7 @@ label{
   width:100%;
   padding:14px;
   font-size:clamp(14px,2vw,15px);
-  resize: none;
+  resize:none;
 }
 
 .input-icon input:focus,
@@ -140,138 +151,126 @@ label{
 }
 
 .input-icon:focus-within{
-  border-color:var(--secondary);
+  border-color:#6E33FF;
   background:white;
-  box-shadow:0 0 15px rgba(255,103,51,0.1);
+  box-shadow:0 0 15px rgba(110,51,255,0.1);
 }
 
-/* boton enviar */
-.btn-enviar{
-  background:linear-gradient(135deg,var(--secondary),#FF8E66);
-  color:white;
+/* botones */
+.btn{
   border:none;
   padding:16px;
   width:100%;
   border-radius:15px;
   cursor:pointer;
-  margin-top:10px;
   font-weight:bold;
-  box-shadow:0 8px 20px rgba(255,103,51,0.3);
-  transition:.3s;
   font-size:clamp(14px,2vw,16px);
+  transition:.3s;
+  margin-bottom:20px;
 }
 
-.btn-enviar:hover{
+.btn-report{
+  background:linear-gradient(135deg,#FF6733,#FF8E66);
+  color:white;
+  box-shadow:0 8px 20px rgba(255,103,51,0.3);
+}
+
+.btn-report:hover{
   transform:scale(1.02);
   box-shadow:0 12px 25px rgba(255,103,51,0.4);
 }
 
-/* boton volver */
-.btn-volver{
-  background:#eee;
-  color:#666;
-  border:none;
-  padding:16px;
+.btn-submit{
+  background:#6E33FF;
+  color:white;
+  box-shadow:0 10px 25px rgba(110,51,255,0.3);
+  position:relative;
+  overflow:hidden;
+}
+
+.btn-submit:hover{
+  background:#5522CC;
+  letter-spacing:1px;
+}
+
+.btn-submit::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
   width:100%;
-  border-radius:15px;
-  cursor:pointer;
-  font-weight:bold;
-  margin-top:10px;
-  font-size:clamp(14px,2vw,16px);
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.6),transparent);
+  transition:.6s;
 }
 
-.btn-volver:hover{
-  background:#ddd;
+.btn-submit:hover::after{
+  left:100%;
 }
 
-/* responsive extra */
+/* footer */
+.footer{
+  margin-top:20px;
+  font-size:12px;
+  color:#999;
+  text-align:center;
+}
+
+/* responsive */
 @media (max-width:480px){
-  .report-card{
-    padding:20px;
+  .card{
+    padding:25px;
     border-radius:20px;
   }
-  .logo{
-    width:120px;
-    height:120px;
-    margin-bottom:15px;
-  }
-  .btn-enviar, .btn-volver{
+
+  .btn{
     padding:14px;
   }
-  .input-icon input,
-  .input-icon textarea{
-    padding:12px;
-  }
 }
-
 </style>
 </head>
-
 <body>
 
-<div class="report-card">
-
+<div class="card">
   <img class="logo" src="logo_cbtis.jpg" alt="Logo CBTIS">
 
   <h1>Reportar Falla</h1>
-  <p class="subtitle">Completa los datos para asistencia técnica</p>
+  <p class="subtitle">Sistema de Control de Laboratorios CBTIS 258</p>
+
+  <button class="btn btn-report" onclick="window.location.href='menu.html'">
+    Volver al Menú
+  </button>
 
   <div class="input-group">
     <label>Nombre del Alumno</label>
     <div class="input-icon">
-      <span>👤</span>
-      <input type="text" id="nombre" placeholder="Nombre completo">
+      <i class="fa-solid fa-user"></i>
+      <input type="text" placeholder="Nombre completo">
     </div>
   </div>
 
   <div class="input-group">
     <label>Número de Serie del Equipo</label>
     <div class="input-icon">
-      <span>🔢</span>
-      <input type="text" id="serie" placeholder="S/N">
+      <i class="fa-solid fa-barcode"></i>
+      <input type="text" placeholder="S/N del equipo">
     </div>
   </div>
 
   <div class="input-group">
     <label>Descripción del Problema</label>
     <div class="input-icon">
-      <span>📝</span>
-      <textarea id="descripcion" rows="4" placeholder="Describe el problema"></textarea>
+      <i class="fa-solid fa-pen-to-square"></i>
+      <textarea placeholder="Describe el problema"></textarea>
     </div>
   </div>
 
-  <button class="btn-enviar" onclick="enviarReporte()">ENVIAR REPORTE</button>
-  <button class="btn-volver" onclick="window.location.href='index.html'">VOLVER</button>
+  <button class="btn btn-submit" onclick="alert('Falla reportada correctamente!')">
+    ENVIAR REPORTE
+  </button>
 
+  <p class="footer">Sistema de Control de Laboratorios • CBTIS 258</p>
 </div>
-
-<script>
-function enviarReporte(){
-  let nombre = document.getElementById("nombre").value.trim();
-  let serie = document.getElementById("serie").value.trim();
-  let descripcion = document.getElementById("descripcion").value.trim();
-
-  if(!nombre || !serie || !descripcion){
-    alert("Por favor llena todos los campos");
-    return;
-  }
-
-  let fecha = new Date().toISOString().split("T")[0];
-  let hora = new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
-
-  let reporte = { nombre, serie, descripcion, fecha, hora };
-
-  let reportes = JSON.parse(localStorage.getItem("reportes")) || [];
-  reportes.push(reporte);
-
-  localStorage.setItem("reportes", JSON.stringify(reportes));
-
-  alert("Tu reporte ha sido enviado.");
-  document.getElementById("nombre").value="";
-  document.getElementById("serie").value="";
-  document.getElementById("descripcion").value="";
-}
-</script>
 
 </body>
 </html>
